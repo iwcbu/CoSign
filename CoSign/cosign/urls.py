@@ -2,7 +2,7 @@
 
 from django.urls import path
 from .views import *
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 from django.contrib.auth import views as auth_views # generic view for auth
 
 
@@ -22,8 +22,10 @@ from django.contrib.auth import views as auth_views # generic view for auth
 urlpatterns = [
 
     # Home
-    path('', TemplateView.as_view(), name='home'),
-    path('/home', TemplateView.as_view(), name='home'),
+    path('', RedirectView.as_view(url="home", permanent=False), name='home'), # redirects a user to CoSign's home page url pattern
+    path('home', HomeView.as_view(), name='home'),
+    path('profile', ProfileDetailView.as_view(), name='show_profile'),
+
 
     #Feed
 
