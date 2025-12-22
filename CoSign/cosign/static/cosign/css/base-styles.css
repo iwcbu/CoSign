@@ -7,11 +7,12 @@ body {
 }
 
 .navbar {
-    height: 50px;
-    background-color: #3f9dff;
+    height: 60px;
+    background-color: #bdd8f4;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: black 2px solid;
     
     ul {
         margin: 0;
@@ -24,10 +25,15 @@ body {
     li {
         cursor: pointer;
         font-size: 25px;
+        padding: 5px 10px;
+
+        
     }
 
     a {
         text-decoration: none;
+        color: rgb(49, 49, 49);
+        font-weight: 500;
     }
 
     

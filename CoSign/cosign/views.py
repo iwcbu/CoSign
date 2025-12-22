@@ -2,6 +2,7 @@
 
 from django.shortcuts import render
 from django.views.generic import View, TemplateView
+from .models import *
 
 # Create your views here.
 
@@ -16,3 +17,4 @@ class HomeView(TemplateView):
 class ProfileDetailView(TemplateView):
 
     template_name = 'cosign/profile/show_profile.html'
+
