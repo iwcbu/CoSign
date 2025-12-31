@@ -1,0 +1,77 @@
+<!-- cosign/templates/home/home.html -->
+
+{% extends 'cosign/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1>All Profiles (temporary view)</h1>
+
+    <div class="profileList">
+
+        {% for profile in profiles %}
+        <a href="{% url 'show_profile' profile.pk %}" style="text-decoration: none; color: #1f1f1f;">
+            <div class="profileListCard">
+                <div class="pfp-box">
+                    <img src="{{ profile.pfp_file.url }}" alt="pfp">
+                </div>
+                <div class="profileCardText">
+                    <h4>{{ profile.username }}</h4>
+                    <p><i>{{ profile.first_name }} {{ profile.last_name }}</i></p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
+
+
+</div>
+
+<style>
+    .profileList {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .profileListCard {
+        display: flex;
+        align-items: center;
+
+
+        border: solid black 2px;
+        width: fit-content;
+        padding: 10px;
+
+        .pfp-box {
+            max-width: 50px;
+            max-height: 50px;
+            overflow:hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            img {
+                max-height: 50px;
+            }
+        }
+
+        .profileCardText {
+            display: flex;
+            flex-direction: column;
+            padding: 0px 20px;
+
+            h4, p {
+                margin: 0;
+                padding: 0px;
+            }
+            
+        }
+    }
+</style>
+{% endblock %}

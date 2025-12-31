@@ -22,12 +22,12 @@ from django.contrib.auth import views as auth_views # generic view for auth
 urlpatterns = [
 
     # Home
-    path('', RedirectView.as_view(url="home", permanent=False), name='home'), # redirects a user to CoSign's home page url pattern
-    path('home', HomeView.as_view(), name='home'),
-    path('profile', ProfileDetailView.as_view(), name='show_profile'),
+    path('', RedirectView.as_view(url="show_all_profiles", permanent=False), name='home'), # redirects a user to CoSign's home page url pattern
+    path('show_all_profiles', ShowAllProfiles.as_view(), name='show_all_profiles'),
+    path('profile/<int:pk>', ProfileDetailView.as_view(), name='show_profile'),
 
 
     #Feed
 
-    #
+
 ]

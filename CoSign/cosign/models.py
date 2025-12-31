@@ -22,13 +22,15 @@ class Profile(models.Model):
 
     '''
     username = models.TextField(max_length=20, unique=True)
-    name = models.TextField(blank=True)
-    pfp_url = models.URLField(blank=True)
+    first_name = models.TextField(blank=True)
+    last_name = models.TextField(blank=True)
     pfp_file = models.FileField(blank=True, null=True)
     bio = models.TextField(blank=True)
 
     created = models.DateTimeField(auto_now_add=True, blank=True)
 
+    def __str__(self):
+        return f'{self.username}'
 
 
 class Post(models.Model):
