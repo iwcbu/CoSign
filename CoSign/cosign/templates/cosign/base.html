@@ -8,13 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoSign</title>
     <link rel="stylesheet" href="{% static 'cosign/css/base-styles.css' %}">
+
+    {% block sub_css %}{% endblock sub_css %}
+
 </head>
 <body>
     <nav class="navbar">
         
         <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'show_profile' 1 %}">Profile</a></li>
+            <li><a href="{% url 'home' %}">All Profiles</a></li>
         </ul>
     </nav>
 

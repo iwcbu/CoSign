@@ -1,6 +1,11 @@
 <!-- cosign/templates/profile/show_profile.html -->
 
 {% extends 'cosign/base.html' %}
+{% load static %}
+
+{% block sub_css %}
+<link rel="stylesheet" href="{% static 'cosign/css/profile/show_profile-styles.css' %}">
+{% endblock sub_css %}
 
 {% block content %}
 <div class="profilePage">
@@ -34,59 +39,4 @@
     </section>
 </div>
 
-<style>
-
-    .profilePage{
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 24px 16px;
-    }
-
-    .profileHeader{
-        background: #fff;
-        border: 1px solid #e8e8e8;
-        border-radius: 16px;
-        padding: 18px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    }
-
-    .profileHeader-main{
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .profileAvatar{
-        width: 84px;
-        height: 84px;
-        border-radius: 999px;
-        object-fit: cover;
-        border: 2px solid #f0f0f0;
-        flex-shrink: 0;
-    }
-
-    .profileName{
-        margin: 0;
-        font-size: 28px;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-    }
-
-    .profileHandle{
-        margin: 6px 0 0;
-        color: #6b7280;
-        font-size: 15px;
-    }
-
-    .profile-bio{
-        margin-top: 14px;
-        padding-top: 14px;
-        border-top: 1px solid #efefef;
-        color: #111827;
-        font-size: 15px;
-        line-height: 1.5;
-        white-space: pre-wrap;
-    }
-
-</style>
 {% endblock content %}

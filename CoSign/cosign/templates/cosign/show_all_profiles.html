@@ -1,7 +1,11 @@
-<!-- cosign/templates/home/home.html -->
+<!-- cosign/templates/show_all_profiles.html -->
 
 {% extends 'cosign/base.html' %}
+{% load static %}
 
+{% block sub_css %}
+<link rel="stylesheet" href="{% static 'cosign/css/profile/show_all_profiles-styles.css' %}">
+{% endblock sub_css %}
 
 {% block content %}
 
@@ -29,49 +33,4 @@
 
 </div>
 
-<style>
-    .profileList {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        gap: 20px;
-    }
-
-    .profileListCard {
-        display: flex;
-        align-items: center;
-
-
-        border: solid black 2px;
-        width: fit-content;
-        padding: 10px;
-
-        .pfp-box {
-            max-width: 50px;
-            max-height: 50px;
-            overflow:hidden;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-
-            img {
-                max-height: 50px;
-            }
-        }
-
-        .profileCardText {
-            display: flex;
-            flex-direction: column;
-            padding: 0px 20px;
-
-            h4, p {
-                margin: 0;
-                padding: 0px;
-            }
-            
-        }
-    }
-</style>
 {% endblock %}
