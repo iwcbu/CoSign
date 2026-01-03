@@ -12,19 +12,9 @@
     <section class="profileHeader">
         <div class="profileHeader-main">
             {% if profile.pfp_file %}
-            <img src="{{ profile.pfp_file.url }}" alt="Profile picture" class="profileAvatar">
+                <img src="{{ profile.pfp_file.url }}" alt="Profile picture" class="profileAvatar">
             {% else %}
-
-
-            <!-- ================================= -->
-            
-                            <!-- CHANGE ASAP -->
-            <img src="https://i.pinimg.com/474x/33/f8/26/33f8266681c946cd80de486c499fe992.jpg" alt="profile picture" class="profileAvatar">
-
-            <!-- ================================= -->
-
-
-
+                <img src="{% static 'cosign/img/defaultpfp.jpg' %}" alt="profile picture" class="profileAvater">
             {% endif %}
             <div>
                 <h1 class="profileName">

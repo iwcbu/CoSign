@@ -24,7 +24,7 @@ class Profile(models.Model):
     username = models.TextField(max_length=20, unique=True)
     first_name = models.TextField(blank=True)
     last_name = models.TextField(blank=True)
-    pfp_file = models.FileField(blank=True, null=True)
+    pfp_file = models.ImageField(blank=True, null=True, default="defaultpfp.jpg")
     bio = models.TextField(blank=True)
 
     created = models.DateTimeField(auto_now_add=True, blank=True)
