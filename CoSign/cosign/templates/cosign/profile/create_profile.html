@@ -1,0 +1,93 @@
+<!-- cosign/templates/cosign/profile/create_profile.html -->
+
+
+{% extends 'cosign/base.html' %}
+
+{% block content %}
+
+
+<h1 id="titleCreateProfile">Create Profile</h1>
+<div id="container">
+    <form action="{% url 'create_profile' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <fieldset class="fieldset">
+            <legend class="legend">Login Information</legend>
+            
+            <table>
+                <div class="form-group">
+                    <label for="id_first_name">First name</label>
+                    {{ profileForm.first_name }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_last_name">Last name</label>
+                    {{ profileForm.last_name }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_email">Email</label>
+                    {{ profileForm.email }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_username">Username</label>
+                    {{ userForm.username }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_password">Password</label>
+                    {{ userForm.password1 }}
+                     <small class="helptext">
+                        {{ userForm.password1.help_text|safe }}
+                    </small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_password_confirmation">Password Confirmation</label>
+                    {{ userForm.password2 }}
+                </div>
+
+            </table>
+        </fieldset>
+        <br><br>
+        <fieldset class="fieldset">
+            
+            <legend class="legend">Profile Customization</legend>
+                <div class="form-group">
+                    <label for="id_city">City</label>
+                    {{ profileForm.city }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_state">State</label>
+                    {{ profileForm.state }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_zip_code">Zip Code</label>
+                    {{ profileForm.zip_code }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_profile_image">Profile Image</label>
+                    {{ profileForm.profile_image }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_bio">Bio</label>
+                    {{ profileForm.bio }}
+                </div>
+
+        </fieldset>
+
+            
+        <div class="button-container">
+            <input type="submit" name="submit" class="submit-button">
+            <a href="{% url 'market' %}" class="cancel-button">cancel</a>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
