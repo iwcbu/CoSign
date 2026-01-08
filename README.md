@@ -39,7 +39,7 @@ Instead of infinite feeds and engagement maximizing algorithms, Cosign is inspir
 - **Backend:** Django (Python), Django ORM, Django REST Framework (REST API)
 - **Web:** Django templates
 - **Mobile:** React Native
-- **Database:** SQLite
+- **Database:** PostgreSQL
 
 
 ---
