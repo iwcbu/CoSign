@@ -53,4 +53,14 @@
     white-space: pre-wrap;
 }
 
+.updateButton {
+    padding: 5px 15px;
+    background-color: rgb(117, 197, 255);
+    border: solid 2px #111827;
+}
+.deleteButton {
+    padding: 5px 15px;
+    background-color: rgb(250, 94, 94);
+    border: solid 2px #111827;
+}
 

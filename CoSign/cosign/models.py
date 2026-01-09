@@ -14,17 +14,18 @@ class Profile(models.Model):
     models
         :username: = models.TextField(max_length=20, unique=True)
         :name: = models.TextField(blank=True)
-        :pfp_url: = models.URLField(blank=True)
         :pfp_file: = models.FileField(blank=True, null=True)
         :bio: = models.TextField(blank=True)
+        :pfp_file: = models.ImageField(blank=True, null=True, default="defaultpfp.jpg")
         :created: = models.DateTimeField(auto_now_add=True, blank=True)
 
 
     '''
+    # user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     username = models.TextField(max_length=20, unique=True)
     first_name = models.TextField(blank=True)
     last_name = models.TextField(blank=True)
-    pfp_file = models.ImageField(blank=True, null=True, default="defaultpfp.jpg")
+    pfp_file = models.ImageField(blank=True, null=True)
     bio = models.TextField(blank=True)
 
     created = models.DateTimeField(auto_now_add=True, blank=True)

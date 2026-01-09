@@ -18,7 +18,11 @@
         <a href="{% url 'show_profile' profile.pk %}" style="text-decoration: none; color: #1f1f1f;">
             <div class="profileListCard">
                 <div class="pfp-box">
-                    <img src="{{ profile.pfp_file.url }}" alt="pfp">
+                    {% if profile.pfp_file %}
+                        <img src="{{ profile.pfp_file.url }}" alt="Profile picture" class="profileAvatar">
+                    {% else %}
+                        <img src="{% static 'cosign/img/defaultpfp.jpg' %}" alt="profile picture" class="profileAvatar">
+                    {% endif %}
                 </div>
                 <div class="profileCardText">
                     <h4>{{ profile.username }}</h4>

@@ -14,7 +14,7 @@
             {% if profile.pfp_file %}
                 <img src="{{ profile.pfp_file.url }}" alt="Profile picture" class="profileAvatar">
             {% else %}
-                <img src="{% static 'cosign/img/defaultpfp.jpg' %}" alt="profile picture" class="profileAvater">
+                <img src="{% static 'cosign/img/defaultpfp.jpg' %}" alt="profile picture" class="profileAvatar">
             {% endif %}
             <div>
                 <h1 class="profileName">
@@ -25,6 +25,14 @@
         </div>
         <div class="profile-bio">
             {{ profile.bio }}
+        </div>
+        <div class="buttonBox">
+            <div class="updateButton">
+                <p>Update</p>
+            </div>
+            <div class="deleteButton">
+                <p>Delete</p>
+            </div>
         </div>
     </section>
 </div>
