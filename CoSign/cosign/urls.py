@@ -21,13 +21,19 @@ from django.contrib.auth import views as auth_views # generic view for auth
 
 urlpatterns = [
 
-    # Home
+    # Profiles
     path('', RedirectView.as_view(url="show_all_profiles", permanent=False), name='home'), # redirects a user to CoSign's home page url pattern
     path('show_all_profiles', ShowAllProfiles.as_view(), name='show_all_profiles'),
     path('profile/<int:pk>', ProfileDetailView.as_view(), name='show_profile'),
+    path('profile/<int:pk>/update', ProfileUpdateView.as_view(), name='update_profile'),
+    # path('profile/<int:pk>/delete', ProfileDeleteView.as_view(), name='delete_profile'),
 
 
-    #Feed
 
+    # Post and Feed
+
+    # Interactions
+
+    #
 
 ]

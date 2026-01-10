@@ -1,0 +1,40 @@
+<!-- /cosign/templates/cosign/profile/update_profile.html -->
+
+{% extends 'cosign/base.html' %}
+{% load static %}
+
+{% block sub_css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+{% endblock sub_css %}
+
+{% block content %}
+
+<h1>{{ profile.username }}: Update Profile</h1>
+<div>
+    <form action="{% url 'update_profile' profile.pk %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" value="{{ profile.username|default:'' }}">
+        </div>
+        
+        <div class="mb-3">
+            <label for="username" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="username" value="{{ profile.first_name|default:'' }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="username" value="{{ profile.last_name|default:'' }}">
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" onclick=""></button>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
